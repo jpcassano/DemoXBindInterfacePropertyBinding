@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DemoXBindInterfacePropertyBinding (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "DemoXBindInterfacePropertyBinding (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
