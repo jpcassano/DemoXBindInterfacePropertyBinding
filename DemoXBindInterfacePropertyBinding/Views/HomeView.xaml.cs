@@ -7,7 +7,7 @@ namespace DemoXBindInterfacePropertyBinding
 {
     public sealed partial class HomeView : Page
     {
-        public HomeViewModel ViewModel;
+        public HomeViewModel ViewModel { get; }
 
         public HomeView()
         {

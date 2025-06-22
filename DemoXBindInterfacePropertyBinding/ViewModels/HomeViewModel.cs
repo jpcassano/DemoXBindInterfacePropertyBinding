@@ -6,18 +6,22 @@ namespace DemoXBindInterfacePropertyBinding.ViewModels
 {
     public partial class HomeViewModel : ObservableObject
     {
-        [ObservableProperty]
-        private IInterfaceWithObservableProperty interfaceWithProperty;
-
-        public HomeViewModel(IInterfaceWithObservableProperty interfaceWithProperty)
+        private IInterfaceWithObservableProperty interfaceWithObservableProperty;
+        public IInterfaceWithObservableProperty InterfaceWithObservableProperty
         {
-            this.interfaceWithProperty = interfaceWithProperty;
+            get => interfaceWithObservableProperty;
+            set => SetProperty(ref interfaceWithObservableProperty, value);
+        }
+
+        public HomeViewModel(IInterfaceWithObservableProperty interfaceWithObservableProperty)
+        {
+            this.interfaceWithObservableProperty = interfaceWithObservableProperty;
         }
 
         [RelayCommand]
         private async Task RunCalculateMethodAsync()
         {
-            await InterfaceWithProperty.ExecuteAsync();
+            await InterfaceWithObservableProperty.ExecuteAsync();
         }
 
     }
